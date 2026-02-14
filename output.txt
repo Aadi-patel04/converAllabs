@@ -1,0 +1,48 @@
+===== TASK 1: LOGIN =====
+
+POST /auth/login
+
+Response:
+{
+  "message": "OTP sent",
+  "loginSessionId": "0raud2"
+}
+
+
+===== TASK 2: VERIFY OTP =====
+
+POST /auth/verify-otp
+
+Response:
+{
+  "message": "OTP verified",
+  "sessionId": "0raud2"
+}
+
+
+===== TASK 3: GET TOKEN =====
+
+POST /auth/token
+
+Response:
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "expires_in": 900
+}
+
+
+===== TASK 4: ACCESS PROTECTED ROUTE =====
+
+GET /protected
+
+Response:
+{
+  "message": "Access granted",
+  "user": {
+    "email": "aadip@example.com",
+    "sessionId": "0raud2",
+    "iat": 1771097104,
+    "exp": 1771098004
+  },
+  "success_flag": "FLAG-YWFkaXBAZXhhbXBsZS5jb21fQ09NUExFVEVEX0FTU0lHTk1FTlQ="
+}
